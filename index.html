@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>多选框</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+</head>
+<body>
+<select class="selectpicker" multiple data-live-search="true">
+    <option value="1">广东省</option>
+    <option value="2">广西省</option>
+    <option value="3">福建省</option>
+    <option value="4">湖南省</option>
+    <option value="5">山东省</option>
+</select>
+<button class="btn">点击</button>
+<script type="text/javascript">
+	$(function(){
+		$(".btn").click(function(){
+			var str = $(".filter-option").text()
+			console.log("str="+str.replace(/[\r\n]/g,"").replace(/(^\s*)|(\s*$)/g, ""));
+			var val = str.replace(/[\r\n]/g,"").replace(/\s/g, "").split(",")
+			console.log(val)
+			var ss = "广东省, 广西省,  福建省,  湖南省";
+			console.log(ss.replace(/\s/g,""))
+		})
+	})
+</script>
+</body>
+</html>
+
